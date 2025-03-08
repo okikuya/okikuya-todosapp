@@ -1,0 +1,49 @@
+@import 'variables';
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: right;
+
+    img{
+        width: 24px;
+    }
+}
+  
+  .menu-container:focus-within .menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  
+  .menu-content {
+    padding: 10px 16px 12px 14px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    min-width: 66px;
+    z-index: 100;
+  }
+  
+  .menu-item {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-family: Sen;
+    font-size: 12px;
+    font-weight: 400;
+    transition: background 0.2s;
+  }
+  
+  .menu-item:hover {
+    background: #f2f2f2;
+  }

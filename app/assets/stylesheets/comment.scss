@@ -1,0 +1,92 @@
+@import 'variables';
+
+.comments-section {
+    margin-top: 35px;
+}
+
+.comment_title{
+    margin-bottom: 25px;
+    color: #000;
+    font-family: Sen;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.comment_box {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.comment-header {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.comment-content {
+    color: #000;
+    font-family: Sen;
+    font-size: 14px;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+.comment-users {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    // gap: 3px; /* アイコンの間隔 */
+  }
+  
+  .comment-user-avatar {
+    margin-right: -13px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    // border: 2px solid #ddd; /* 枠線をつける場合 */
+  }
+
+.comment-info {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  
+.comment-icon {
+    width: 20px;
+    height: 20px;
+}
+  
+.comment-count {
+    color: #000;
+    font-family: Sen;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.2;
+}
+
+.comment_add{
+    padding-top: 20px;
+    padding-bottom: 18px;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-family: Sen;
+    font-weight: 400;
+    border-radius: 10px;
+    border: 1px dashed rgba(0, 0, 0, 0.20);
+    background: #FFF;
+}

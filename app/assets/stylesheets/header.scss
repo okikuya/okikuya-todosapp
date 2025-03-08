@@ -1,0 +1,99 @@
+@import 'variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px 8px;
+  height: 58px;
+  font-weight: bold;
+  font-family: Sen;
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
+  a {
+      color: #000;
+      font-size: 14px;
+    }
+    
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+//   &_logos {
+//     min-width: 0;
+//     display: flex;
+
+    // img {
+    //   cursor: pointer;
+    //   width: $back-icon-size;
+    //   height: $back-icon-size;
+    //   margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    // }
+//   }
+
+  &_pageTitle {
+    color: #000;
+    line-height: normal;
+    font-size: $font-lg;
+    font-weight: 800;
+  }
+
+//   &_avatar {
+//     width: $avatar-size;
+//     height: $avatar-size;
+//     border-radius: 100%;
+//   }
+}
+
+  /* アバターコンテナ */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* アバター画像 */
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* ドロップダウンメニューの初期状態（非表示） */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px; /* アバター画像の下に表示 */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    width: 110px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* アバターにホバーしたときにメニューを表示 */
+  .avatar-container:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* メニュー項目 */
+  .dropdown-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  
