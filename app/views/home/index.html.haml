@@ -1,1 +1,51 @@
-%h1 HOME
+.board_container
+    %h2.header_pageTitle All Boards
+    %div
+        - @boards.each do |board|
+            %div
+                %div
+                    = board.name
+                    -# 3つのドットボタン（メニュー）
+                    - if board.user == current_user
+                        .menu-container
+                            %button.menu-button{ tabindex: "0" }
+                                •••
+                            .menu-content
+                                = link_to 'Edit', edit_board_path(board), class: "menu-item"
+                                = link_to 'delete', board_path(board), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "menu-item delete"
+                %div
+                    = board.description
+                .field
+                    %p
+                        - if board.user&.avatar&.attached?
+                            = image_tag board.user.avatar, alt: "Board Creator Avatar", class: "user-avatar"
+                        - else
+                            = image_tag "default-avatar.png", alt: "Default Avatar", class: "user-avatar"
+
+    -# %div.board_content
+    -#     %div.board_boxes
+    -#         - @boards.each do |board|
+    -#             %div.board_box
+    -#                 %div.board_box-top
+    -#                     = link_to board_tasks_path(board), class: "board_link" do
+    -#                         %span.board_name= board.name
+
+    -#                     - if board.user == current_user
+    -#                         .menu-container
+    -#                             %button.menu-button{ tabindex: "0" }
+    -#                                 = image_tag 'actions.svg', class: 'dropbtn'
+    -#                             .menu-content
+    -#                                 = link_to 'Edit', edit_board_path(board), class: "menu-item"
+    -#                                 = link_to 'Delete', board_path(board), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "menu-item"
+
+    -#                 %div
+    -#                     %p.board_description= board.description
+    -#                 .field
+    -#                     %p
+    -#                         - if board.user&.avatar&.attached?
+    -#                             = image_tag board.user.avatar, alt: "Board Creator Avatar", class: "user-avatar"
+    -#                         - else
+    -#                             = image_tag "default-avatar.png", alt: "Default Avatar", class: "user-avatar"
+
+    .board_add
+        = link_to "+ Add new board", new_board_path, class: "add-board-button"

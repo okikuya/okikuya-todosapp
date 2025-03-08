@@ -1,0 +1,12 @@
+.container
+    %h2.header_pageTitle Edit Board
+    .new-board-form
+        = form_with(model: @board, local: true) do |f|
+            %div.board_field
+                = f.label :name, 'Name'
+                = f.text_field :name
+            %div.board_field
+                = f.label :description, 'Description'
+                = f.text_area :description, class: "board-description"
+            .actions
+                = f.submit "Submit", class: "submit-btn"
