@@ -1,0 +1,60 @@
+@import 'variables';
+
+.board{
+    &_container {
+        padding: 32px 22px 34px 30px;
+        width: 100%;
+    }
+
+    &_content {
+        padding-top: 35px;
+    }
+
+    &_boxes {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    &_box-top {
+        display: flex;
+        justify-content: space-between;;
+    }
+
+    &_box {
+        padding: 32px 16px 20px 17px;
+        border-radius: 10px;
+        background: #F4F4F4;
+        color: #000;
+        font-family: Sen;
+        font-weight: 400;
+        position: relative;
+    }
+
+    &_name {
+        font-size: 18px;
+    }
+
+    &_description {
+        margin-top: 6px;
+        margin-bottom: 29px;
+        padding-right: 36px;
+        font-size: 14px;
+        opacity: 0.4;
+        word-break: break-all;
+    }
+
+    &_add{
+        margin-top: 26px;
+        padding-top: 68px;
+        padding-bottom: 67px;
+        color: #000;
+        text-align: center;
+        font-size: 18px;
+        font-family: Sen;
+        font-weight: 400;
+        border-radius: 10px;
+        border: 1px dashed rgba(0, 0, 0, 0.20);
+        background: #FFF;
+    }
+}

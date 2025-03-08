@@ -1,0 +1,77 @@
+@import 'variables';
+
+.task{
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &-thumbnail {
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 20px auto;
+    }
+  
+    &-description {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    &_description-show {
+        border-radius: 10px;
+        background: #F4F4F4;
+        margin-top: 35px;
+        padding: 20px 16px 26px 15px;
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    &_description, &_deadline {
+        margin-top: 6px;
+        font-size: 14px;
+        opacity: 0.4;
+        word-break: break-all;
+    }
+
+    &_deadline {
+        margin-bottom: 65px;
+    }
+
+    &_eyecatch {
+        margin-bottom: 27px;
+        height: 170px;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+    }
+
+    &_eyecatch-show{
+        margin-top: 32px;
+        height: 170px;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+    }
+}
