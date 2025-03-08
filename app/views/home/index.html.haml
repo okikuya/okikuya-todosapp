@@ -5,6 +5,14 @@
             %div
                 %div
                     = board.name
+                    -# 3つのドットボタン（メニュー）
+                    - if board.user == current_user
+                        .menu-container
+                            %button.menu-button{ tabindex: "0" }
+                                •••
+                            .menu-content
+                                = link_to '更新', edit_board_path(board), class: "menu-item"
+                                = link_to '削除', board_path(board), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "menu-item delete"
                 %div
                     = board.description
 
