@@ -1,0 +1,10 @@
+.container
+  %h2 New Comment
+  .new-board-form
+    = form_with model: [@task, @comment], url: board_task_comments_path(@task.board, @task), local: true do |f|
+      .back-link
+        = link_to "×", board_task_path(@task.board, @task)
+      .field
+        = f.text_area :content, class: "board-description"
+      .actions
+        = f.submit "Submit", class: "submit-btn"

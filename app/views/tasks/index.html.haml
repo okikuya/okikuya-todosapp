@@ -15,16 +15,16 @@
               - if task.deadline.present?
                 %p.task_deadline= "Deadline: #{task.deadline.strftime('%Y-%m-%d %H:%M')}"
             
-            -# .comment-users
-            -#   - task.comments.includes(:user).map(&:user).uniq.each do |user|
-            -#     - if user.avatar.attached?
-            -#       = image_tag user.avatar, class: "comment-user-avatar", alt: "#{user.email.split('@').first}'s avatar"
-            -#     - else
-            -#       = image_tag "default-avatar.png", class: "comment-user-avatar", alt: "Default avatar"
+            .comment-users
+              - task.comments.includes(:user).map(&:user).uniq.each do |user|
+                - if user.avatar.attached?
+                  = image_tag user.avatar, class: "comment-user-avatar", alt: "#{user.email.split('@').first}'s avatar"
+                - else
+                  = image_tag "default-avatar.png", class: "comment-user-avatar", alt: "Default avatar"
 
-            -# .comment-info
-            -#   %span.comment-count= task.comments.count
-            -#   = image_tag "comment-count.png", alt: "Comment Count", class: "comment-icon"
+            .comment-info
+              %span.comment-count= task.comments.count
+              = image_tag "comment-count.png", alt: "Comment Count", class: "comment-icon"
   
   .board_add
     = link_to "+ Add new card", new_board_task_path(@board), class: "add-task-button"
