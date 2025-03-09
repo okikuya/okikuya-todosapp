@@ -15,20 +15,20 @@
   %div.task_description-show
     %p= @task.content
 
-  -# .comments-section
-  -#   %h2.comment_title Comment
-  -#   - if @task.comments.any?
-  -#     - @task.comments.each do |comment|
-  -#       .comment_box
-  -#         .comment-header
-  -#           - if comment.user.avatar.attached?
-  -#             = image_tag comment.user.avatar, class: "comment-avatar"
-  -#           - else
-  -#             = image_tag "default-avatar.png", class: "comment-avatar"
-  -#         .comment-content
-  -#           %p= truncate(comment.content, length: 120, omission: '...')
-  -#   - else
-  -#     %p まだコメントはありません。
+  .comments-section
+    %h2.comment_title Comment
+    - if @task.comments.any?
+      - @task.comments.each do |comment|
+        .comment_box
+          .comment-header
+            - if comment.user.avatar.attached?
+              = image_tag comment.user.avatar, class: "comment-avatar"
+            - else
+              = image_tag "default-avatar.png", class: "comment-avatar"
+          .comment-content
+            %p= truncate(comment.content, length: 120, omission: '...')
+    - else
+      %p まだコメントはありません。
 
     .comment_add
       = link_to "+ Add new comment", new_board_task_comment_path(@task.board, @task)

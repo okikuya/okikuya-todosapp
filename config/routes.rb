@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get "boards", to: "home#index"
   resources :boards do
-    resources :tasks
+    resources :tasks do
+      resources :comments, only: [:new, :create]
+    end
   end
 end
