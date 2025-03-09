@@ -23,5 +23,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :boards, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   has_one_attached :avatar
+
+  def name
+    email.split('@').first
+  end
 end

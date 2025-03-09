@@ -1,0 +1,22 @@
+.container
+  %h2 Edit Task
+  .new-board-form
+    = form_with model: [@board, @task], local: true do |f|
+      %div.board_field
+        = f.label :title, "Name"
+        %br/
+        = f.text_field :title
+      %div.board_field
+        = f.label :content, "Description"
+        %br/
+        = f.text_area :content, class: "board-description"
+      %div.board_field
+        = f.label :deadline, "Deadline"
+        %br/
+        = f.datetime_field :deadline
+      %div.board_field
+        = f.label :eyecatch, "アイキャッチ"
+        %br/
+        = f.file_field :eyecatch
+      .actions
+        = f.submit "Submit", class: "submit-btn"
