@@ -120,7 +120,7 @@ GEM
       html2haml
     erubi (1.13.1)
     erubis (2.7.0)
-    ffi (1.17.1)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.3.0)
@@ -345,6 +345,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb2haml
+  ffi (~> 1.15.0)
   hamlit
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
