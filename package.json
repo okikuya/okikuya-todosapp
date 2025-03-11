@@ -12,5 +12,8 @@
   "engines": {
     "node": "18.20.7",
     "yarn": "1.22.22"
+  },
+  "script": {
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && webpack"
   }
 }
