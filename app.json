@@ -1,0 +1,16 @@
+{
+    "name": "todos app",
+    "description": "This is todosapp",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/okikuya/okikuya-todosapp",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+}

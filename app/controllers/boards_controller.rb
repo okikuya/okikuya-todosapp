@@ -8,7 +8,7 @@ class BoardsController < ApplicationController
     end
 
     def edit
-        # ここで @board は set_board メソッドによってセットされる
+        # @board は set_board でセットされる
     end
 
     def create
@@ -22,12 +22,11 @@ class BoardsController < ApplicationController
     end
 
     def update
-        @board = current_user.boards.find(params[:id])
         if @board.update(board_params)
-          redirect_to boards_path, notice: "ボードを更新しました"
+            redirect_to boards_path, notice: "ボードを更新しました"
         else
-          flash.now[:error] = '更新できませんでした'
-          render :edit
+            flash.now[:error] = '更新できませんでした'
+            render :edit
         end
     end
     
@@ -39,18 +38,15 @@ class BoardsController < ApplicationController
     private
 
     def set_board
-        @board = Board.find(params[:id])
+        @board = Board.find_by(id: params[:id])
+        redirect_to boards_path, alert: "ボードが見つかりません" if @board.nil?
     end
     
     def authorize_user!
-        redirect_to boards_path, alert: "権限がありません" unless @board.user == current_user
+        redirect_to boards_path, alert: "権限がありません" if @board.nil? || @board.user != current_user
     end
 
     def board_params
-        params.require(:board).permit(
-            :name,
-            :description,
-            :avatar
-        )
+        params.require(:board).permit(:name, :description, :avatar)
     end
 end
